@@ -57,8 +57,7 @@ public class Tree<T> {
 		boolean res = false;
 		if (node.getData().equals(keyNode)) // if the Node's data matches the key
 			return true; // Node found 1
-		else { 
-			for (Node<T> child : node.getChildren()) //for each child in the Node passed in
+		else {	for (Node<T> child : node.getChildren()) //for each child in the Node passed in
 				if (find(child, keyNode)) // Recursively call find until a match in found
 					res = true; // 1 if found
 		}
