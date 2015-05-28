@@ -30,7 +30,6 @@ public class TreeStuff {
 		node4.addChild(node7);
 		Tree tree = new Tree(node1);
 		System.out.println("Begin Tree test....");
-		
 		System.out.println("\n\n________________Traversal Test___________");
 		System.out.print("INFIX: " );
 		System.out.println("[1, 2, 3, 4, 5, 6, 7]");
@@ -38,7 +37,6 @@ public class TreeStuff {
 		System.out.println(tree.getPreOrderTraversal());
 		System.out.print("POSTFIX: " );
 		System.out.println(tree.getPostOrderTraversal());
-		
 		System.out.println("\n\n________________Children Test___________");
 		System.out.print("NODE1 kids: " + node1.getChildren() + "\n");
 		System.out.print("NODE2 kids: " + node2.getChildren()+ "\n");
@@ -47,7 +45,6 @@ public class TreeStuff {
 		System.out.print("NODE5 kids: " + node5.getChildren()+ "\n");
 		System.out.print("NODE6 kids: " + node6.getChildren()+ "\n");
 		System.out.print("NODE7 kids: " + node7.getChildren()+ "\n");
-		
 		System.out.println("\n\n________________Parent Test___________");
 		System.out.print("NODE1 kids: " + node1.getParent() + "\n");
 		System.out.print("NODE2 kids: " + node2.getParent() + "\n");
@@ -56,10 +53,8 @@ public class TreeStuff {
 		System.out.print("NODE5 kids: " + node5.getParent() + "\n");
 		System.out.print("NODE6 kids: " + node6.getParent() + "\n");
 		System.out.print("NODE7 kids: " + node7.getParent() + "\n");
-	
 		System.out.println("\n\n________________Size Test___________");
 		System.out.print("Tree Descendent count: " + tree.getNumberOfDescendants(node1) + "\n");
 		System.out.print("Tree Node count: " + tree.getNumberOfNodes() + "\n");
-
 	}
 }
