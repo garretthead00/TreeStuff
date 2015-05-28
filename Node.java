@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package treestuff;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /** Class Node:
  * This class will create a Node of the generic type T.
  * This class will contain methods to manipulate Nodes in the Game Tree.
- * 
  * @author Garrett Head
- *
  * @param <T>
  */
 public class Node<T> {
@@ -22,8 +14,6 @@ public class Node<T> {
 	private List<Node<T>> children;
 	private Node<T> parent;
 
-	
-	
 	/** Constructor
 	 * This will create a Node assigning it the T data value passed through && created the children for the Node
 	 */
@@ -54,9 +44,7 @@ public class Node<T> {
 
 	/** This method will assign the parent of the entire children list to the Node **/
 	public void setChildren(List<Node<T>> children) {
-		for (Node<T> child : children)
-			child.setParent(this); //child.parent = this;
-
+		for (Node<T> child : children){	child.setParent(this); 	}
 		this.children = children; // Assign the list to the children list passed in
 	}
 
@@ -67,7 +55,6 @@ public class Node<T> {
 
 	/** This method will remove a individual child at a given index an return the removed Node **/
 	public Node<T> removeChildAt(int index) {
-		
 		// when returned; push/enqueue the returned Node
 		return children.remove(index);
 	}
@@ -94,7 +81,6 @@ public class Node<T> {
 
 	/** This method will return the children list of the Node **/
 	public List<Node<T>> getChildren() {
-		
 		return this.children;
 	}
 
@@ -105,24 +91,15 @@ public class Node<T> {
 
 	/** This method will return a boolean of the comparison of data between different Nodes **/
 	public boolean equals(Object obj) {
-		if (null == obj)
-			return false;
-
-		
-		if (obj instanceof Node) // If object and Node have the same data type
-		{
-			if (((Node<?>) obj).getData().equals(this.data)) // Use the wild card to match any type and compare the data
-				return true;
-		}
-
+		if (null == obj) { return false; }
+		// If object and Node have the same data type; Use the wild card to match any type and compare the data
+		if (obj instanceof Node) { if (((Node<?>) obj).getData().equals(this.data)) {return true;}}
 		// not equal
 		return false;
 	}
-
 	
 	/** This method will return a String of the data in the Node **/
 	public String toString() {
 		return this.data.toString();
 	}
-
 }
