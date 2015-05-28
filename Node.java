@@ -14,17 +14,11 @@ public class Node<T> {
 	private List<Node<T>> children;
 	private Node<T> parent;
 
-	/** Constructor
-	 * This will create a Node assigning it the T data value passed through && created the children for the Node
-	 */
 	public Node(T data) {
 		this.data = data;
 		this.children = new ArrayList<Node<T>>(); // create the list of children
 	}
 
-	/** Constructor
-	 * This will be passed a Node node and will assign the data value of the Node && create the children
-	 */
 	public Node(Node<T> node) {
 		this.data = (T) node.getData();
 		children = new ArrayList<Node<T>>(); // create the list of children
