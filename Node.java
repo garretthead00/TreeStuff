@@ -49,45 +49,28 @@ public class Node<T> {
 	}
 
 	/** This method will remove the children list from the Node **/
-	public void removeChildren() {
-		this.children.clear();
-	}
+	public void removeChildren() {	this.children.clear();	}
 
-	/** This method will remove a individual child at a given index an return the removed Node **/
-	public Node<T> removeChildAt(int index) {
-		// when returned; push/enqueue the returned Node
-		return children.remove(index);
-	}
+	// This method will remove a individual child at a given index an return the removed Node; when returned; push/enqueue the returned Node
+	public Node<T> removeChildAt(int index) { return children.remove(index);	}
 
 	/** This method will Access and return the data of the Node **/
-	public T getData() {
-		return this.data;
-	}
+	public T getData() { return this.data;	}
 
 	/** This method will update the data of the Node by pasing the data in*/
-	public void setData(T data) {
-		this.data = data;
-	}
+	public void setData(T data) {	this.data = data; }
 
 	/** This method will return the parent of the Node */
-	public Node<T> getParent() {
-		return this.parent;
-	}
+	public Node<T> getParent() {	return this.parent;	}
 
 	/** This method will assign the Parent of the Node calling the method  **/
-	public void setParent(Node<T> parent) {
-		this.parent = parent;
-	}
+	public void setParent(Node<T> parent) {	this.parent = parent;	}
 
 	/** This method will return the children list of the Node **/
-	public List<Node<T>> getChildren() {
-		return this.children;
-	}
+	public List<Node<T>> getChildren() { return this.children; }
 
 	/** This will return the child of the Node at the specified index **/
-	public Node<T> getChildAt(int index) {
-		return children.get(index);
-	}
+	public Node<T> getChildAt(int index) {	return children.get(index); }
 
 	/** This method will return a boolean of the comparison of data between different Nodes **/
 	public boolean equals(Object obj) {
@@ -99,7 +82,5 @@ public class Node<T> {
 	}
 	
 	/** This method will return a String of the data in the Node **/
-	public String toString() {
-		return this.data.toString();
-	}
+	public String toString() { return this.data.toString();	}
 }
