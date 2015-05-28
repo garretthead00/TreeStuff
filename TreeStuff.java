@@ -1,13 +1,10 @@
 package treestuff;
 
-
 public class TreeStuff {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
-		
-		
-		
+
 		Node node1 = new Node(1);
 		Node node2 = new Node(2);
 		Node node3 = new Node(3);
@@ -15,7 +12,6 @@ public class TreeStuff {
 		Node node5 = new Node(5);
 		Node node6 = new Node(6);
 		Node node7 = new Node(7);
-		
 		
 		/**************************************				 
 		 * 	
@@ -25,17 +21,14 @@ public class TreeStuff {
 		 * NODE1 	
 		 * 	L		\NODE2 --NODE5 
 		 * 					\NODE4 --NODE7
-		 ************************************** 
-		 */
+		 ***************************************/
 		node1.addChild(node2);
 		node1.addChild(node3);
 		node2.addChild(node4);
 		node2.addChild(node5);
 		node3.addChild(node6);
 		node4.addChild(node7);
-		
 		Tree tree = new Tree(node1);
-		
 		System.out.println("Begin Tree test....");
 		
 		System.out.println("\n\n________________Traversal Test___________");
@@ -63,13 +56,10 @@ public class TreeStuff {
 		System.out.print("NODE5 kids: " + node5.getParent() + "\n");
 		System.out.print("NODE6 kids: " + node6.getParent() + "\n");
 		System.out.print("NODE7 kids: " + node7.getParent() + "\n");
-		
+	
 		System.out.println("\n\n________________Size Test___________");
 		System.out.print("Tree Descendent count: " + tree.getNumberOfDescendants(node1) + "\n");
 		System.out.print("Tree Node count: " + tree.getNumberOfNodes() + "\n");
-		
-		
 
 	}
-
 }
