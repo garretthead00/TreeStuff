@@ -1,15 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package treestuff;
 import java.util.ArrayList;
 
+
 /**Class: Tree
  * This class will create and manipulate the Tree of generic type T using the Nodes<T> and the methods
+ * 
  * @author Garrett Head
+ *
  * @param <T>
  */
 public class Tree<T> {
 
+	//Declare the root Node
 	private Node<T> root;
+	
 
+	
 	/** This constructor will create the root of the Tree using the Node<T> r passed in
         * @param r 
         **/
@@ -49,7 +60,9 @@ public class Tree<T> {
 		int n = node.getChildren().size(); // get the number of kids in the list
 		for (Node<T> child : node.getChildren())
 			n+= getNumberOfDescendants(child); // for each child in the list; the sum
+			
 		return n;
+
 	}
 
 	/** This method returns a boolean if the method has found a match in the Tree **/
@@ -57,10 +70,13 @@ public class Tree<T> {
 		boolean res = false;
 		if (node.getData().equals(keyNode)) // if the Node's data matches the key
 			return true; // Node found 1
-		else {	for (Node<T> child : node.getChildren()) //for each child in the Node passed in
+
+		else { 
+			for (Node<T> child : node.getChildren()) //for each child in the Node passed in
 				if (find(child, keyNode)) // Recursively call find until a match in found
 					res = true; // 1 if found
 		}
+
 		return res;
 	}
 	
@@ -70,10 +86,15 @@ public class Tree<T> {
 		ArrayList<Node<T>> newList = new ArrayList<Node<T>>(); // create a new Node list
 		for (Node<T> node : list) // for each node in the list
 			newList.add(new Node<T>(node)); // add the node to the newList
+
 		return newList;
 	}
 	
 	/****************************PRE ORDER TRAVERSAL*****************************/
+	
+	/** This method will build the tree using the Pre Order Method by passing in the node
+	 * and an ArrayList of Nodes
+	 */
 	private void buildPreOrder(Node<T> node, ArrayList<Node<T>> preOrder) {
 		preOrder.add(node); 
 		for (Node<T> child : node.getChildren()) {
@@ -81,13 +102,15 @@ public class Tree<T> {
 		}
 	}
 	
-	/** This method will return the preOrder arranged list **/
+	/** This method will returns the preOrder arranged list **/
 	public ArrayList<Node<T>> getPreOrderTraversal() {
 		ArrayList<Node<T>> preOrder = new ArrayList<Node<T>>();
 		buildPreOrder(root, preOrder); // calls the recursive function preOrder
 		return preOrder;
 	}
-
+	/**********************END PRE OREDER ***************************************/
+	
+	
 	/***********************POST ORDER TRAVERSAL********************************/
 	public ArrayList<Node<T>> getPostOrderTraversal() {
 		ArrayList<Node<T>> postOrder = new ArrayList<Node<T>>();
@@ -101,4 +124,8 @@ public class Tree<T> {
 		}
 		postOrder.add(node);
 	}
+	/*********************END POST ORDER*****************************************/
+	
+	
+
 }
