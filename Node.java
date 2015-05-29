@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package treestuff;
+package boxbuilder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class Node<T> {
 	 */
 	public Node(T data) {
 		this.data = data;
-		this.children = new ArrayList<Node<T>>(); // create the list of children
+		this.children = new ArrayList<>(); // create the list of children
 	}
 
 	/** Constructor
@@ -37,7 +37,7 @@ public class Node<T> {
 	 */
 	public Node(Node<T> node) {
 		this.data = (T) node.getData();
-		children = new ArrayList<Node<T>>(); // create the list of children
+		children = new ArrayList<>(); // create the list of children
 	}
 
 	/** This method will add a child Node to THIS by passing in the Node child; */
@@ -86,7 +86,7 @@ public class Node<T> {
 		return this.data;
 	}
 
-	/** This method will update the data of the Node by pasing the data in*/
+	/** This method will update the data of the Node by passing the data in*/
 	public void setData(T data) {
 		this.data = data;
 	}
