@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package treestuff;
+package boxbuilder;
 import java.util.ArrayList;
 
 
@@ -83,18 +83,13 @@ public class Tree<T> {
 	@SuppressWarnings("unused")
 	/** This method will clone a list of Nodes in the list to a new Node list and returns the newList */
 	private ArrayList<Node<T>> clone(ArrayList<Node<T>> list) {
-		ArrayList<Node<T>> newList = new ArrayList<Node<T>>(); // create a new Node list
+		ArrayList<Node<T>> newList = new ArrayList<>(); // create a new Node list
 		for (Node<T> node : list) // for each node in the list
 			newList.add(new Node<T>(node)); // add the node to the newList
 
 		return newList;
 	}
-	
-	/****************************PRE ORDER TRAVERSAL*****************************/
-	
-	/** This method will build the tree using the Pre Order Method by passing in the node
-	 * and an ArrayList of Nodes
-	 */
+
 	private void buildPreOrder(Node<T> node, ArrayList<Node<T>> preOrder) {
 		preOrder.add(node); 
 		for (Node<T> child : node.getChildren()) {
@@ -104,16 +99,13 @@ public class Tree<T> {
 	
 	/** This method will returns the preOrder arranged list **/
 	public ArrayList<Node<T>> getPreOrderTraversal() {
-		ArrayList<Node<T>> preOrder = new ArrayList<Node<T>>();
+		ArrayList<Node<T>> preOrder = new ArrayList<>();
 		buildPreOrder(root, preOrder); // calls the recursive function preOrder
 		return preOrder;
 	}
-	/**********************END PRE OREDER ***************************************/
-	
-	
-	/***********************POST ORDER TRAVERSAL********************************/
+
 	public ArrayList<Node<T>> getPostOrderTraversal() {
-		ArrayList<Node<T>> postOrder = new ArrayList<Node<T>>();
+		ArrayList<Node<T>> postOrder = new ArrayList<>();
 		buildPostOrder(root, postOrder);
 		return postOrder;
 	}
@@ -124,8 +116,5 @@ public class Tree<T> {
 		}
 		postOrder.add(node);
 	}
-	/*********************END POST ORDER*****************************************/
-	
-	
 
 }
