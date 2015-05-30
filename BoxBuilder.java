@@ -1,4 +1,10 @@
-package boxbuilder;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package treestuff;
+
 import java.util.ArrayList;
 
 /**
@@ -11,16 +17,6 @@ public class BoxBuilder {
     private Tree tree;
     private int width;
     private ArrayList<Node> boxes;
-    
-    
-    
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    public static void main(String[] args) {
-
-        BoxBuilder builder = new BoxBuilder(7);
-
-        System.out.print(builder.getBox());
-    }
     
     public BoxBuilder(int N){
         boxes = new ArrayList<>();
@@ -48,8 +44,9 @@ public class BoxBuilder {
             if(N==1){
                 node = new Node("X");
                 tree = new Tree(node);
+                
             }
-            
+            else{
                 
                 BuildBox(N-2,boxes);
                 boxes = tree.getPostOrderTraversal();
@@ -58,14 +55,16 @@ public class BoxBuilder {
                     if(kid == boxes.get(0)){
                         addNFamily(N, kid);
                     }
+                    
                     if(kid.hasChild()){
                         Node youngest = kid.getChildAt(kid.getChildren().size()-1);
                         if(kid.data == youngest.data){
                             addNFamily(1,kid);
                         } 
                     }
-                }                
-            
+                }               
+                
+            }
         }
     
     public String getBoxTag(int N){
